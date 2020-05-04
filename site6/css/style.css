@@ -1,4 +1,6 @@
-
+html{
+    scroll-behavior: smooth;
+}
 
 body
 {
@@ -200,7 +202,9 @@ button
     margin-left: 20% ;
    
 } */
-
+.sec img {
+    border-radius: 25px;
+}
 
 .flip
 {
@@ -209,7 +213,6 @@ button
     float: left;
     perspective: 1000px;
     margin-left: 300px;
-    
 }
 
 .flip .frente
@@ -217,8 +220,7 @@ button
     position: absolute;
     transform: rotateY(0deg);
     backface-visibility: hidden;
-    transition: all .4s linear;
-    
+    transition: all .4s linear;    
 }
 
 
