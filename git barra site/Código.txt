@@ -1,0 +1,185 @@
+--------------------------------------------HTML--------------------------------------------------------------------
+
+ <input type="checkbox" id="check">
+        <label id="icone" for="check"> <img src="img/icone.png" alt="" style="width: 50px; height: 45px;"></label>
+    
+        <div class="barra">
+    
+            
+            <nav>
+                <a href="index.html">
+                    <div class="link">Início</div>
+                </a>
+                <a href="">
+                    <div class="link">Catálogo</div>
+                </a>
+                <a href="">
+                    <div class="link">Ranking</div>
+                </a>
+                <a href="">
+                    <div class="link">Equipe</div>
+                </a>
+                
+            </nav>
+    
+            
+    
+        </div>
+
+
+        <input type="checkbox" id="check2">
+        <label id="icone2" for="check2"> <img src="img/user.png" alt="" style="width: 50px; height: 45px;"></label>
+    
+        <div class="barra2">
+    
+            
+            <nav>
+                <a href="login.html">
+                    <div class="link">Login</div>
+                </a>
+                <a href="cadastrar.html">
+                    <div class="link">Registrar-se</div>
+                </a>
+                
+            </nav>
+    
+            
+    
+        </div>
+
+
+
+
+
+
+---------------------------------------CSS-----------------------------------------------------------------------------
+
+
+
+#check
+{
+    display: none;
+
+}
+
+#check2
+{
+    display: none;
+}
+
+
+
+
+
+#icone
+{
+   
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 8em;
+  cursor: pointer;
+  padding: 15px;
+  z-index: 2;
+  
+  
+}
+
+#icone2
+{
+   
+  position: fixed;
+  right: -5%;
+  top: 0px;
+  width: 8em;
+  cursor: pointer;
+  padding: 15px;
+  z-index: 2;
+  
+}
+
+.barra
+{
+    background-color:#494949;
+    height: 100%;
+    width: 300px;
+    position: fixed;
+    transition: all .2s linear;
+    left: -300px;
+    opacity: 0.8;
+    z-index: 0;
+    
+}
+
+.barra2
+{
+    background-color:#494949;
+    height: 100%;
+    width: 300px;
+    position: fixed;
+    transition: all .2s linear;
+    right: -300px;
+    opacity: 0.8;
+    z-index: 0;
+   
+}
+
+
+
+nav
+{
+    position: fixed;
+    width: 100%;
+    top: 60px;
+    
+}
+
+nav a
+{
+    text-decoration: none;
+    
+}
+
+.link
+{
+    background-color:#494950;
+    padding: 20px;
+    font-family: Arial;
+    font-size: 12pt;
+    transition: all .1s linear;
+    color: #f4f4f9;
+    border-bottom: 2px solid #222;
+    opacity: 0;
+   
+    
+}
+
+.link:hover
+{
+    background-color: #ff342d;
+}
+
+#check:checked~.barra
+{
+    transform: translateX(300px) ;
+    z-index: 1;
+
+}
+
+#check2:checked~.barra2
+{
+    transform: translateX(-300px);
+    z-index: 1;
+}
+
+#check:checked~.barra nav a .link
+{
+    margin-top: 0;
+    opacity: 1;
+}
+
+#check2:checked~.barra2 nav a .link
+{
+    margin-top: 0;
+    opacity: 1;
+}
