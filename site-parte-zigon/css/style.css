@@ -33,6 +33,7 @@ body{
     width: 27.5%;
     text-align: center;
     height: 525px;
+    border-radius: 20px 20px 0px 0px;
 }
 .fas{
     color: greenyellow;
@@ -64,6 +65,11 @@ body{
     height: 60px;
     padding: 10px;
     box-shadow: 5px 5px 15px 1px #888888;
+    transition: 0.4s all;
+}
+.botoes input:hover {
+    background-color: #9acd99;
+    transition: 0.4s all;
 }
 .ultimaparte{
     text-align: center;
@@ -87,6 +93,11 @@ body{
     box-shadow: 5px 5px 15px 1px #888888;
     border-radius: 10px;
     margin-bottom: 5%;
+    transition: 0.4s all;
+}
+.ultimaparte input:hover {
+    background-color: #9acd99;
+    transition: 0.4s all;
 }
 .avaliações{
     display: flex;
