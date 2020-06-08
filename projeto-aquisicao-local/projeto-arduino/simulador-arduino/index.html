@@ -3,7 +3,7 @@
 <html>
 
 <head>
-	<title>Simulador arduino</title>
+	<title>Line Chart</title>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
 	<script src="http://www.chartjs.org/dist/2.7.1/Chart.js"></script>
 	<script src="http://www.chartjs.org/samples/latest/utils.js"></script>
@@ -23,7 +23,7 @@
 				<h2>Média: <label id='average'>0.00</label></h2>
 				<h2>Média Hora: <label id='averageHour'>0.00</label></h2>
 			</section>
-			<section style="width:100%">
+			<section style="width:50%">
 				<canvas id="chart"></canvas>
 		<section>
 	</div>
@@ -33,30 +33,29 @@
 			<h2>Média: <label id='averageHumidity'>0.00</label></h2>
 			<h2>Média Hora: <label id='averageHourHumidity'>0.00</label></h2>
 		</section>
-		<section style="width:100%">
+		<section style="width:50%">
 			<canvas id="chart-humidity"></canvas>
 		<section>
 	</div>
-	<!--<div>
+	<div>
 		<section>
 			<h1>Sensor TRC5000 - Switch</h1>
 		</section>
-		<section style="width:100%">
+		<section style="width:50%">
 			<canvas id="chart-switch"></canvas>
 		<section>
-	</div>-->
-	<!--<div>
+	</div>
+	<div>
 		<section>
 			<h1>Sensor LDR - Luminosidade</h1>
 			<h2>Média: <label id='averageLumi'>0.00</label></h2>
 			<h2>Média Hora: <label id='averageHourLumi'>0.00</label></h2>
 		</section>
-		<section style="width:100%">
+		<section style="width:50%">
 			<canvas id="chart-lumi"></canvas>
 		<section>
-	</div>-->
+	</div>
 	<script>
-
 		var context = document.getElementById("chart").getContext("2d");
 		context.canvas.width = 1000;
 		context.canvas.height = 300;
@@ -65,7 +64,7 @@
 			type: 'line',
 			data: {
 				datasets: [{
-					label: "Temperatura - Variação",
+					label: "Temperature x Time",
 					type: 'line',
 					borderColor: ['#ff3232'],
 					backgroundColor: ['#ff7f7f']
@@ -83,7 +82,7 @@
 					yAxes: [{
 						scaleLabel: {
 							display: true,
-							labelString: 'Temperatura'
+							labelString: 'Temperature'
                         },
                         ticks: {
                             beginAtZero:true
@@ -99,15 +98,14 @@
 		var chart = new Chart(context, configuration);
 
         //Função para obter os dados de temperatura do server
-        //Seria mais interessante fazer isso com WebSocket, porém para fins academicos, os dados serão atualizados via HTTP
-        
+               
         //Esse atributo dentro do contexto serve para saber qual foi o último índice processado, assim eliminado os outros elementos na
         //hora de montar/atualizar o gráfico
         this.lastIndexTemp = 0;
         this.time = 0;
 
         function get_data(){
-
+			
             var http = new XMLHttpRequest();
             http.open('GET', 'http://localhost:3000/api', false);
             http.send(null);        
@@ -120,14 +118,13 @@
             var _lastIndexTemp = this.lastIndexTemp;
             this.lastIndexTemp = obj.data.length;
             listTemp = obj.data.slice(_lastIndexTemp);
-
+		
             listTemp.forEach(data => {
                 //Máximo de 60 itens exibidos no gráfico
                 if (chart.data.labels.length == 10 && chart.data.datasets[0].data.length == 10){
                     chart.data.labels.shift();
                     chart.data.datasets[0].data.shift();
                 }
-
                 chart.data.labels.push(this.time++);
                 chart.data.datasets[0].data.push(parseFloat(data));
                 chart.update();
@@ -147,7 +144,7 @@
 			type: 'line',
 			data: {
 				datasets: [{
-					label: "Umidade",
+					label: "Humidity x Time",
 					type: 'line',
 					borderColor: ['#3232ff'],
 					backgroundColor: ['#9999ff']
@@ -165,7 +162,7 @@
 					yAxes: [{
 						scaleLabel: {
 							display: true,
-							labelString: 'Umidade'
+							labelString: 'Humidity'
                         },
                         ticks: {
                             beginAtZero:true
@@ -181,7 +178,7 @@
 		var chartHumidity = new Chart(context2, humidity);
 
         //Função para obter os dados de temperatura do server
-        //Seria mais interessante fazer isso com WebSocket, porém para fins academicos, os dados serão atualizados via HTTP
+        
         
         //Esse atributo dentro do contexto serve para saber qual foi o último índice processado, assim eliminado os outros elementos na
         //hora de montar/atualizar o gráfico
@@ -221,7 +218,7 @@
 		
 		get_dataHumidity();
 
-		/*//Thirty Graphic
+		//Thirty Graphic
 
 		var context3 = document.getElementById("chart-switch").getContext("2d");
 		context3.canvas.width = 1000;
@@ -265,8 +262,7 @@
 		var chartSwitch = new Chart(context3, switch_sensor);
 
         //Função para obter os dados de temperatura do server
-        //Seria mais interessante fazer isso com WebSocket, porém para fins academicos, os dados serão atualizados via HTTP
-        
+                
         //Esse atributo dentro do contexto serve para saber qual foi o último índice processado, assim eliminado os outros elementos na
         //hora de montar/atualizar o gráfico
         this.lastIndexTempHumidity = 0;
@@ -301,11 +297,11 @@
 			
 		} 
 		
-		get_switch();*/
+		get_switch();
 
 		//Fourty Graphic
 
-		/*var context4 = document.getElementById("chart-lumi").getContext("2d");
+		var context4 = document.getElementById("chart-lumi").getContext("2d");
 		context4.canvas.width = 1000;
 		context4.canvas.height = 300;
         
@@ -347,8 +343,7 @@
 		var chartLumi = new Chart(context4, lumi_sensor);
 
         //Função para obter os dados de temperatura do server
-        //Seria mais interessante fazer isso com WebSocket, porém para fins academicos, os dados serão atualizados via HTTP
-        
+                
         //Esse atributo dentro do contexto serve para saber qual foi o último índice processado, assim eliminado os outros elementos na
         //hora de montar/atualizar o gráfico
         this.lastIndexLumi = 0;
@@ -361,7 +356,6 @@
             http.send(null);        
 			
             var obj = JSON.parse(http.responseText);
-			console.log(obj)
             if (obj.data.length == 0){
                 return;
             }
@@ -387,14 +381,25 @@
 			
 		} 
 		
-		get_lumi();*/
+		get_lumi();
+
+		function sendTemperature(){
+			var http = new XMLHttpRequest();
+            http.open('POST', 'http://localhost:3000/api/sendData', false);
+            http.send(null);
+		}
+
+
+
 
         setInterval(() => {
 			get_data();
 			get_dataHumidity();
 			get_switch();
 			get_lumi();
-        }, 1000);
+			sendTemperature();
+		}, 3000);
+		
 
 	</script>
 </body>

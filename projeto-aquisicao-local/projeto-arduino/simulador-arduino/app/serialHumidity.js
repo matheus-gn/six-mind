@@ -31,7 +31,7 @@ class NewArduinoHumidity {
             this.__listDataTemp.push(data_float[0]);
             this.listData.push(data_float[0]);
 
-        }, 100);
+        }, 3000);
     }
 }
 
