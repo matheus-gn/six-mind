@@ -1,0 +1,221 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    margin: 0;
+}
+.imagem{
+    background-image: url('../fundo1.jpg') ;
+    width: 100%;
+}
+.imagem .subtitulo{
+    text-align: center;
+    padding-top:2%;
+    padding-bottom: 2%;
+    color: white;
+    font-size: 60px;
+}
+.imagem .subtitulo p{
+    padding-top:2%;
+    font-size: 36px;
+}
+.imagem h1{
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
+.imagem .caixona{
+    display: flex;
+    padding-right: 5%;
+    padding-left: 5%;
+    justify-content: space-evenly;
+}
+.caixa h2 {
+    margin-top: 30px;
+}
+.imagem .caixona .caixa{
+    background-color: rgb(255, 255, 255);
+    width: 27.5%;
+    text-align: center;
+    height: 525px;
+    border-radius: 20px 20px 0px 0px;
+}
+.fas{
+    color: greenyellow;
+}
+.imagem .caixona .caixa p{
+    padding: 5%;
+    color: gray;
+}
+.imagem .caixona .caixa .textopreço{
+    color: gray;
+}
+.imagem .caixona .caixa .textopreço .preço{
+    color: greenyellow;
+    font-size: 28px;
+}
+.botoes{
+    display: flex;
+    padding-right: 5%;
+    padding-left: 5%;
+    justify-content: space-evenly;
+}
+.botoes input{
+    color: rgb(255, 255, 255);
+    background-color: yellowgreen;
+    outline-style:none ;
+    border-width: 0;
+    font-size: 28px;
+    width: 27.5%;
+    height: 60px;
+    padding: 10px;
+    box-shadow: 5px 5px 15px 1px #888888;
+    transition: 0.4s all;
+}
+.botoes input:hover {
+    background-color: #9acd99;
+    transition: 0.4s all;
+}
+.ultimaparte{
+    text-align: center;
+    margin-top: 5%;
+}
+.ultimaparte .textinho{
+    
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-bottom: 2.5%;
+}
+.ultimaparte input{
+    color: rgb(255, 255, 255);
+    background-color: yellowgreen;
+    outline-style:none ;
+    border-width: 0;
+    font-size: 28px;
+    width: 27.5%;
+    height: 60px;
+    padding: 10px;
+    box-shadow: 5px 5px 15px 1px #888888;
+    border-radius: 10px;
+    margin-bottom: 5%;
+    transition: 0.4s all;
+}
+.ultimaparte input:hover {
+    background-color: #9acd99;
+    transition: 0.4s all;
+}
+.avaliações{
+    display: flex;
+    align-items: center;
+    padding-left: 9%;
+}
+.titulo2 {
+    padding: 5px;
+}
+.titulo2 h2{
+    font-size: 32px;
+    color: greenyellow;
+    text-align: center;
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
+.avaliações .comentario {
+    display: flex;
+    margin-top: 5%;
+    flex-direction: row;
+    MIN-WIDTH: 125%;
+}
+.fa-user-circle{
+    color: greenyellow;
+    margin-right: 2.5%;
+}
+.avaliações .comentario .caixacoment{
+    width: 50%;
+    min-height: 50px;
+    color: greenyellow;
+    border-radius: 10px;
+    text-align: center;
+    justify-content: center;
+    padding: 2%;
+    background-color: rgb(59, 59, 59);
+}
+.avaliações .comentario .caixacoment .nome{
+    color: white;
+    font-size: 16px;
+    float: right;
+}
+.avaliações .ilustracao{
+    float: right;
+}
+* {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+#footer {
+    font-weight: lighter;
+}
+#footer .container {
+    height: 230px;
+    background-color: #3C3D41;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    text-align: center;
+    color: white;
+}
+#footer .container h3 {
+    margin-top: 40px;
+}
+.footer-redes ul {
+    margin-left: 90px;
+    margin-top: 20px;
+    list-style: none;
+    display: grid;
+    grid-template-columns: 50px 50px 50px 50px;
+}
+.footer-redes img {
+    height: 40px;
+}
+.footer-redes #contact {
+    text-transform: uppercase;
+    background-color: #58AF9C;
+    padding: 8px 16px;
+    border-radius: 20px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    margin-left: 15px;
+    transition: 0.7s all;
+}
+.footer-redes #contact:hover {
+    color: #58AF9C;
+    background-color: white;
+    border: 1px solid #58AF9C;
+    transition: 0.7s all;
+    transform: scale(1.1);
+}
+#footer .container .footer-sobre  {
+    text-align: left;
+}
+#footer .container .footer-sobre a {
+    color: white;
+    text-decoration: none;
+}
+#footer .container .footer-inicio {
+    text-align: left;
+    margin-left: 60px;
+}
+#footer .container .footer-inicio a{
+    text-decoration: none;
+    color: white;
+}
+.copyright {
+    margin-top: -18px;
+    background-color: #343434;
+    color: white;
+    text-align: center;
+    height: 40px;
+}
+.copyright p {
+    line-height: 36px;
+    font-weight: lighter;
+    text-align: inherit;
+    font-size: 18px;
+}

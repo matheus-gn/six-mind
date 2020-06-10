@@ -1,0 +1,127 @@
+body{
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: url(fundo2.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+#logo{
+
+    width: 400px;
+    height: 400px;
+    margin-top: -2%;
+}
+
+.texto{
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    margin-top: -190px;
+}
+.main .container {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    margin-top: auto;
+}
+.header{
+    background-color: transparent;
+    color: #ffffff;
+    margin-right: 10%;
+    margin-left: 10%;
+    margin-top: -170px;
+}
+
+.carrosel .carousel-inner {
+    width: 800px;
+    height: 100%;
+    margin-left: 10%;
+    margin-right: 10%;
+  
+}
+
+#titulos{
+    color: black;
+    text-align: center;
+    margin-top: 20px;
+    
+}
+
+.card {
+    width: 800px;
+    background-color: white;
+    color: black;
+    margin-left: 10%;
+    margin-right: 10%;
+    border-radius: 20px 20px 20px 20px ;
+   
+    
+}
+
+#cards {
+    width: 800px;
+    background-color: transparent;
+    color: black;
+    margin-left: 10%;
+    margin-right: 10%;
+    border-radius: 20px 20px 20px 20px ;
+   
+    
+}
+
+#card-text{
+    text-align: left;
+
+}
+
+#foto{
+float: right;
+}
+
+#fotosE{
+    float: left;
+}
+
+
+.main .box-um {
+    width: 50%;
+    margin-left: 150px;
+    margin-top: 1px;
+    margin-right: 10px;
+    background-color:white;
+    border-radius: 20px 20px 0px 0px ;
+    height: 410px;
+    text-align: center;
+}
+
+.main .box-dois {
+    width: 37%;
+    margin-left: 50px;
+    margin-top: 1px;
+    margin-right: 50px;
+    background-color:white;
+    
+    height: 410px;
+    text-align: center;
+}
+.main .box-tres {
+    width: 50%;
+    margin-left: 0px;
+    margin-top: 1px;
+    margin-right: 150px;
+    background-color:white;
+    
+    height: 300px;
+    text-align: center;
+}
+.main .container {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+}
+
