@@ -140,6 +140,7 @@ nav a
 {
     margin-top: 0;
     opacity: 1;
+    display: block;
 }
 
 .menu

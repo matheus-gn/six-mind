@@ -89,11 +89,11 @@ function registrar_leitura(temperatura, umidade) {
     banco.conectar().then(() => {
 
         return banco.sql.query(`
-        INSERT into leitura (temperatura, umidade, momento)
-        values (${temperatura}, ${umidade}, CONVERT(Datetime, '${agora()}', 120));
+        INSERT into dados_planta (temperatura, umidade, datatempo, fkSensor)
+        values (${temperatura}, ${umidade}, CONVERT(Datetime, '${agora()}', 120), 1);
         
-        delete from leitura where id not in 
-        (select top ${registros_mantidos_tabela_leitura} id from leitura order by id desc);`);
+        delete from dados_planta where idDados not in 
+        (select top ${registros_mantidos_tabela_leitura} idDados from dados_planta order by idDados desc);`);
 
     }).catch(erro => {
 
