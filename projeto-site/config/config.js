@@ -10,8 +10,8 @@ module.exports = {
   production: {
     username: 'adminlocal',
     password: '#Sixminds2020',
-    database: 'bdProjSixminds',
-    host: 'serverprojsixminds.database.windows.net',
+    database: 'bancoProjSixMinds',
+    host: 'srvprojsixminds.database.windows.net',
     dialect: 'mssql',
     xuse_env_variable: 'DATABASE_URL',
     dialectOptions: {

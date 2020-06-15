@@ -1,9 +1,9 @@
 const configuracoes = {
     banco: {
-        server: "serverprojsixminds.database.windows.net",
+        server: "srvprojsixminds.database.windows.net",
         user: "adminlocal",
         password: "#Sixminds2020",
-        database: "bdProjSixminds",
+        database: "bancoProjSixMinds",
         options: {
             encrypt: true
         },
