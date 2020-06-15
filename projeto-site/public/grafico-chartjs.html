@@ -5,26 +5,67 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://kit.fontawesome.com/8034edf1bb.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./stylesheets/estilo.css">
+    <link rel="stylesheet" href="./css/calendar.css">
     <title>Página com exemplo de gráfico com Chart.js</title>
 
     <!-- scripts do Chart.js -->
     <script type="text/javascript" src="https://www.chartjs.org/dist/2.8.0/Chart.min.js"></script>
     <script type="text/javascript" src="https://www.chartjs.org/samples/latest/utils.js"></script>
     <script type="text/javascript" src="funcoes.js"></script>
-
+    <script  type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script  type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/locale/es.js"></script>
+    <script  type="text/javascript" src="./js/calendar.js"></script>
+    
 </head>
 
-<body onload="atualizarGrafico();">
-    <div>
-        Olá, <b id="b_usuario"></b>
-        <a href="#" onclick="logoff()" style="color:maroon">[Sair]</a>
-
-        <a href="tempo-real.html">Tempo Real</a>
-    </div>
-    <div style="width:75%;">
-        <div id="div_aguarde">Dados sendo obtidos...</div>
-        <canvas id="canvas_grafico"></canvas>
-    </div>
+<body >
+    <div id="mySidebar" class="sidebar">
+        <a href="#" class="closebtn" onclick="closeNav()">×</a>
+        <div class="user">
+            <img src="./img/vicente.jfif" style="height: 60px; margin-left: 30px; border-radius: 50%;" alt=""> 
+            <h3 id="h3_usuario">Victor Vicente</h3>
+        </div>
+        <br>
+        <a href="dashboard.html"> <i class="fas fa-chart-line"></i> 2Dashboard</a>
+        <a href="#"> <i class="fas fa-users"></i> Meu Perfil</a>
+        <a href="#"> <i class="fas fa-clipboard-list"></i> Relatórios</a>
+        <a href="#"> <i class="fas fa-cog"></i> Configurações</a>
+        <a href="contato.html"> <i class="fas fa-address-book"></i> Contato</a>
+        <a href="#" id="log-out" class="fa fa-sign-out" onclick="logoff()"> Sair </a>
+        <a id="timereal" href="tempo-real.html">Tempo Real</a>
+      </div>
+  
+      <div class="header">
+        <a class="openbtn" onclick="openNav()">☰</a>
+        <div class="notifica">
+            <i class="fa fa-user fa-2x" aria-hidden="true"></i>
+          </div>
+      </div>
+      <div id="main">
+          <div class="container">     
+                <div id="informacoes_usuario" onload="atualizarGrafico();">
+                    <br> <br>
+                    <div id="informacoes">
+                        <p>Olá, <b id="b_usuario"></b></p>
+                        <p id="how-are-you">Como está indo seu dia?</p>
+                    </div>
+                </div>
+                <div class="graph g1">
+                    <h3>Gráfico Temperatura e Umidade</h3>
+                    <div style="width:100%;">
+                        <div id="div_aguarde">Dados sendo obtidos...</div>
+                        <canvas id="canvas_grafico"></canvas>
+                </div>
+                </div>
+                <div class="root">
+                    <div class="calendar" id="calendar">
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 </body>
 
 </html>
@@ -178,5 +219,20 @@
 
         setTimeout(atualizarGrafico, 5000);
     }
+    function closeNav() {
+    document.getElementById("mySidebar").style.width = "0";
+    document.getElementById("main").style.marginLeft = "0";
+  }
+  function openNav() {
+    document.getElementById("mySidebar").style.width = "250px";
+    document.getElementById("main").style.marginLeft = "250px";
+  }
+</script>
+<script type="text/javascript">
+    let calendar = new Calendar('calendar');
+    calendar.getElement().addEventListener('change', e => {
+        console.log(calendar.value().format('LLL'));
+    });
 
+    
 </script>
