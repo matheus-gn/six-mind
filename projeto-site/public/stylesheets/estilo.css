@@ -6,6 +6,7 @@
 body {
     background-color: #ECF0F1;
     width: 1366px;
+    overflow: initial;
 }
 .container {
     width: 98%;
@@ -18,7 +19,7 @@ body {
 .openbtn {
     font-size: 30px;
     cursor: pointer;
-    color: black;
+    color: white;
     padding: 10px 15px;
     border: none;
 }
@@ -76,7 +77,9 @@ body {
     margin: 0px;
     padding: 3px;
     background-color: white;
-    border-radius: 50px;
+    border-radius: 50% 50%;
+    margin-top: 5px;
+    margin-right: 40px;
   }
   
   .notifica i{
@@ -85,13 +88,13 @@ body {
 #informacoes_usuario {
     background-image: url('../img/natureza.jpg');
     height: 140px;
-    filter: grayscale(100%);
+    /* filter: grayscale(100%); */
     background-size: 100%;
     background-repeat: no-repeat;
 }
 .header {
     height: 50px;
-    background-color: white;
+    background-color: #04BD8F;
 }
 #informacoes {
     height: 80px;
@@ -151,4 +154,14 @@ body {
 #previsao-tempo:hover {
     transform: scale(1.1,1.1);
     transition: 0.4s;
+}
+#na_main{
+    margin-top: 70px;
+    margin-left: 130px;
+}
+#na_main ul {
+    margin: 0px;
+    padding: 0px;
+    list-style: none outside none;
+    margin-left: 50px;
 }
