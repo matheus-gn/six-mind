@@ -6,23 +6,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Página com exemplo de Autenticação (Login)</title>
+    <link rel="stylesheet" href="./stylesheets/estilo-login.css">
 
 </head>
 
 <body>
-
-    <form id="form_login" method="post" onsubmit="return entrar()">
-        Usuário: <input type="text" name="login">
-        <br>
-        Senha: <input type="password" name="senha">
-        <br>
-        <button id="btn_entrar">Entrar</button>
-    </form>
-    
-    <img src="aguarde.gif" id="img_aguarde" style="display: none;">
-    
-    <div id="div_erro" style="background-color: sandybrown; color: maroon; display: none;">
-        
+    <div class="v-header" style="margin-bottom: 125px;">
+        <div class="v-container">
+            <a href="../SixMinds-Matheus/index.html" id="v-voltar"><img src="img/logo.png" alt="imagem" style="height: 100px;"> </a>
+        </div>
+    </div>
+    <div class="v-main">
+        <div class="v-box02">
+            <h1>Login</h1>
+        </div>
+        <div class="v-box">
+            <form id="form_login" method="post" onsubmit="return entrar()">
+                <label for="email_cad">EMAIL:</label>
+                <input type="text" name="login" id="email_cad">
+                <br>
+                <label for="senha01">SENHA:</label>
+                <input type="password" name="senha" id="senha01">
+                <span style="margin: auto;padding-top: 10px;padding-bottom: 10px;">AINDA NÃO TENHO CONTA! <a href="Cadastro_minds.html">CADASTRAR-SE!</a></span>
+                <br>
+                <button id="btn_entrar" type="submit">Entrar</button>
+            </form>
+            
+            <img src="aguarde.gif" id="img_aguarde" style="display: none; height: 50px; float: right; margin-top: -35px;">
+            
+            <div id="div_erro" style="background-color: sandybrown; color: maroon; display: none;">
+                
+            </div>
+        </div>
     </div>
 
 </body>

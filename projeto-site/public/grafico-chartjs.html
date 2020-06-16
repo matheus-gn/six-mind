@@ -17,14 +17,17 @@
     <script  type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script  type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/locale/es.js"></script>
     <script  type="text/javascript" src="./js/calendar.js"></script>
-    
+    <script
+      type="text/javascript"
+      src="https://cdn.intelligence.weforum.org/latest.js"
+    ></script>
 </head>
 
 <body >
     <div id="mySidebar" class="sidebar">
         <a href="#" class="closebtn" onclick="closeNav()">×</a>
         <div class="user">
-            <img src="./img/vicente.jfif" style="height: 60px; margin-left: 30px; border-radius: 50%;" alt=""> 
+            <img src="./img/vicente.jfif" style="height: 60px; margin-top: 10px; border-radius: 50%;" alt="">  <br>
             <h3 id="h3_usuario">Victor Vicente</h3>
         </div>
         <br>
@@ -49,7 +52,7 @@
                     <br> <br>
                     <div id="informacoes">
                         <p>Olá, <b id="b_usuario"></b></p>
-                        <p id="how-are-you">Como está indo seu dia?</p>
+                        <p id="how-are-you">Como você está?</p>
                     </div>
                 </div>
                 <div class="graph g1">
@@ -59,12 +62,17 @@
                         <canvas id="canvas_grafico"></canvas>
                 </div>
                 </div>
+                <div>
                 <div class="root">
                     <div class="calendar" id="calendar">
                     </div>
                     </div>
                 </div>
+                <div>
+                <iframe src="https://www.meteoblue.com/en/weather/widget/three?geoloc=detect&nocurrent=0&noforecast=0&days=4&tempunit=CELSIUS&windunit=KILOMETER_PER_HOUR&layout=image"  frameborder="0" scrolling="NO" allowtransparency="true" sandbox="allow-same-origin allow-scripts allow-popups allow-popups-to-escape-sandbox"id="previsao-tempo"></iframe><div><!-- DO NOT REMOVE THIS LINK --><a href="https://www.meteoblue.com/en/weather/week/index?utm_source=weather_widget&utm_medium=linkus&utm_content=three&utm_campaign=Weather%2BWidget" target="_blank"></a></div>
             </div>
+            <script src="https://apps.elfsight.com/p/platform.js" defer></script>
+            <div id="covid19" class="elfsight-app-fd7d4138-9a9d-47ef-8677-0a465c867b4b"></div>
         </div>
 </body>
 

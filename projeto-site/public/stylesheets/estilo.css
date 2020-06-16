@@ -5,43 +5,45 @@
 }
 body {
     background-color: #ECF0F1;
+    width: 1366px;
 }
 .container {
-    width: 90%;
-    margin: auto;
+    width: 98%;
+    float: right;
 }
   
 #main {
     transition: 0.5s;
-  }
+}
 .openbtn {
     font-size: 30px;
     cursor: pointer;
     color: black;
     padding: 10px 15px;
     border: none;
-  }
+}
 
   .sidebar {
     height: 100%;
     width: 0;
     position: fixed;
-    background-color: #394362;
+    background-color: #04BD8F;
     transition: 0.5s;
     overflow-x: hidden;
-  }
+}
   
   .sidebar a {
     padding: 8px 8px 8px 32px;
     text-decoration: none;
     font-size: 25px;
-    color: #818181;
+    color: white;
     display: block;
-  }
+}
   
   .sidebar a:hover {
-    color: #f1f1f1;
-  }
+    color: #058f6c;
+    transition: 0.2s;
+}
   
   .sidebar .closebtn {
     font-size: 36px;
@@ -50,11 +52,12 @@ body {
   .graph {
     margin: 5px;
     border-radius: 5px;
-    height: 370px;
+    height: 330px;
     background-color: white;
-    width: 50%;
+    width: 40%;
     transition: 0.4s;
     float: left;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   }
   .graph:hover {
       transform: scale(1.1,1.1);
@@ -70,7 +73,7 @@ body {
   .notifica{
     list-style: none;
     float: right;
-    margin: 6px 10px;
+    margin: 0px;
     padding: 3px;
     background-color: white;
     border-radius: 50px;
@@ -82,14 +85,12 @@ body {
 #informacoes_usuario {
     background-image: url('../img/natureza.jpg');
     height: 140px;
-    width: 105.5%;
     filter: grayscale(100%);
     background-size: 100%;
     background-repeat: no-repeat;
 }
 .header {
     height: 50px;
-    width: 100%;
     background-color: white;
 }
 #informacoes {
@@ -113,12 +114,41 @@ body {
 #informacoes a {
     color: white;
 }
+.user {
+    text-align: center;
+    margin-left: 30px;
+    width: 170px;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+}
 #mySiderbar .user img {
     opacity: 100%;
+    margin-left: 40px;
 }
 #mySidebar .user #h3_usuario{
     margin-top: 20px;
-    float: left;
-    margin-right: 22px;
     color: white;
+}
+#covid19 {
+    float: left;
+    box-shadow:  0px 8px 16px 0px rgba(0,0,0,0.2); 
+    border-radius: 15px; 
+    width: 60%;
+    margin-top: 30px;
+    transition: 0.4s;
+}
+#covid19:hover {
+    transform: scale(1.1,1.1);
+    transition: 0.4s;
+}
+#previsao-tempo {
+    width:348px; 
+    height: 316px; 
+    margin-top: 5px; 
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    transition: 0.4s;
+}
+#previsao-tempo:hover {
+    transform: scale(1.1,1.1);
+    transition: 0.4s;
 }
