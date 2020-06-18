@@ -156,12 +156,11 @@ body {
     transition: 0.4s;
 }
 #na_main{
-    margin-top: 70px;
-    margin-left: 130px;
+    margin-top: 20px;
+    margin-left: 10px;
 }
 #na_main ul {
     margin: 0px;
     padding: 0px;
     list-style: none outside none;
-    margin-left: 50px;
 }
