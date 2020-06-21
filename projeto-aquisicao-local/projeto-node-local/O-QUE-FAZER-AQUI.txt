@@ -1,0 +1,17 @@
+1. Altere o arquivo "configuracoes-banco.js" usando as configurações do seu banco de dados
+
+2. Altere, no arquivo "enviar-dados-banco.js", a constante "gerar_dados_aleatorios" para true ou false, conforme sua necessidade
+
+3. Altere, caso tenha optado por gerar dados aleatórios e caso não use temperatura e umidade, a função do arquivo "funcao-gerar-dados.js"
+
+4. Altere, caso tenha optado por ler dados de sensores e caso não use temperatura e umidade, a função do arquivo "funcao-ler-dados-sensores.js"
+
+5. Altere a função no arquivo "funcao-envio-banco.js" para que se adeque a sua realidade (parâmetros da função, instrução sql etc)
+
+6. Caso ainda não exista a pasta "node_modules" nesta pasta, abra um Git Bash aqui e execute o comando "npm i". Isso fará a pasta "node_modules" ser criada (aguarde, serão feitos alguns downloads)
+
+7. Caso já exista a pasta "node_modules" aqui, para iniciar a leitura ou geração de dados e envio destes ao banco, execute o comando "npm start". Fique de olho nas mensagens que vão aparecendo
+
+8. Caso o comando de #7 dê erro, leia a mensagem de erro e tente corrigir. Se não conseguir, fale com professor/monitor
+
+9. Sempre que alterar alguma coisa num dos arquivos .js desta pasta, dê um CTRL+C no Git Bash onde fez o "npm start" e execute esse mesmo comando novamente
