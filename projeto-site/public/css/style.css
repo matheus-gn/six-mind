@@ -1,6 +1,3 @@
-
-
-
 /* parte zig */
 
 .bdz{
@@ -229,17 +226,17 @@
     width: 100%;
     height: 100%;
 }
-.pagamento .container {
+.pagamento .content {
     width: 100%;
     height: 100%;
 }
-.pagamento .container .branca {
+.pagamento .content .branca {
     height: 657px;
     width: 75%;
     background-color: #CECECE;
     float: left;
 }
-.pagamento .container .roxo{
+.pagamento .content .roxo{
     height: 657px;
     width: 25%;
     float: left;
@@ -262,9 +259,6 @@
     border-radius: 15px 0px 0px 15px;
     float: left;
 }
-
-
-
 .pagamento .informacoes-pagamento .cinza {
     float: right;
     height: 100%;
@@ -303,11 +297,9 @@
     margin-top: 5px;
 }
 .pagamento .informacoes-pagamento .branco label {
-    margin-left: -20%;
     font-weight: lighter;
     color: #686868
 }
-
 
 .pagamento .informacoes-pagamento .branco #text-car-number {
     margin-top: 5px;
@@ -378,7 +370,6 @@
 }
 .pagamento .informacoes-pagamento .cinza #h3_escolha {
     font-size: 28px;
-    margin-left: -20%;
 }
 .pagamento .informacoes-pagamento .cinza #b_preco {
     color: #564DDA;
