@@ -31,7 +31,7 @@
             <h3 id="h3_usuario">Victor Vicente</h3>
         </div>
         <br>
-        <a href="dashboard.html"> <i class="fas fa-chart-line"></i> Dashboard</a>
+        <a href="grafico-chartjs.html"> <i class="fas fa-chart-line"></i> Dashboard</a>
         <a href="#"> <i class="fas fa-users"></i> Meu Perfil</a>
         <a href="#"> <i class="fas fa-clipboard-list"></i> Relatórios</a>
         <a href="#"> <i class="fas fa-cog"></i> Configurações</a>
@@ -57,23 +57,37 @@
                 </div>
                 <div class="graph g1">
                     <h3>Gráfico Temperatura e Umidade</h3>
-                    <div style="width:100%;">
+                    <div style="width:92%;">
                         <div id="div_aguarde">Dados sendo obtidos...</div>
                         <canvas id="canvas_grafico"></canvas>
                 </div>
                 </div>
                 <div>
-                <div class="root">
-                    <div class="calendar" id="calendar">
-                    </div>
-                    </div>
+                    <iframe src="https://www.meteoblue.com/en/weather/widget/three?geoloc=detect&nocurrent=0&noforecast=0&days=4&tempunit=CELSIUS&windunit=KILOMETER_PER_HOUR&layout=image"  frameborder="0" scrolling="NO" allowtransparency="true" sandbox="allow-same-origin allow-scripts allow-popups allow-popups-to-escape-sandbox"id="previsao-tempo"></iframe><div><!-- DO NOT REMOVE THIS LINK --><a href="https://www.meteoblue.com/en/weather/week/index?utm_source=weather_widget&utm_medium=linkus&utm_content=three&utm_campaign=Weather%2BWidget" target="_blank"></a></div>
                 </div>
-                <div>
-                <iframe src="https://www.meteoblue.com/en/weather/widget/three?geoloc=detect&nocurrent=0&noforecast=0&days=4&tempunit=CELSIUS&windunit=KILOMETER_PER_HOUR&layout=image"  frameborder="0" scrolling="NO" allowtransparency="true" sandbox="allow-same-origin allow-scripts allow-popups allow-popups-to-escape-sandbox"id="previsao-tempo"></iframe><div><!-- DO NOT REMOVE THIS LINK --><a href="https://www.meteoblue.com/en/weather/week/index?utm_source=weather_widget&utm_medium=linkus&utm_content=three&utm_campaign=Weather%2BWidget" target="_blank"></a></div>
-            </div>
+                    <div>
+                    <div class="root">
+                        <div class="calendar" id="calendar"></div>
+                    </div>
+                    </div>
             <!-- Widgets Notícias Agrícolas - www.noticiasagricolas.com.br/widgets -->
-            <script type="text/javascript" src="https://www.noticiasagricolas.com.br/widget/noticias.js.php?subsecao=15,155,154,120&largura=300px&altura=250px&fonte=Arial%2C%20Helvetica%2C%20sans-serif&tamanho=12pt&cortexto=333333&corlink=006666&qtd=15&output=js" style="margin-top: 50px;"></script>
-        </div>
+            <div class="b">
+                <div class="box-red">
+                    <h1><b id="b_temperatura_alerta">30</b>°C</h1>
+                    <br>
+                    <h2 id="h2_alerta">Alerta</h2>
+                </div>
+            </div>
+            <div class="b">
+                <div class="box-green">
+                    <h1><b id="b_temperatura_media">25</b>°C</h1>
+                    <br>
+                    <h2 id="h2_media">Média</h2>
+                </div>
+            </div>
+            <!-- <script type="text/javascript" src="https://www.noticiasagricolas.com.br/widget/noticias.js.php?subsecao=15,155,154,120&largura=300px&altura=250px&fonte=Arial%2C%20Helvetica%2C%20sans-serif&tamanho=12pt&cortexto=333333&corlink=006666&qtd=15&output=js" style="margin-top: 50px;"></script>
+        </div> -->
+    </div>
 </body>
 
 </html>
@@ -99,8 +113,8 @@
             {
                 yAxisID: 'y-umidade',
                 label: 'Umidade',
-                borderColor: window.chartColors.blue,
-                backgroundColor: window.chartColors.blue,
+                borderColor: window.chartColors.green,
+                backgroundColor: window.chartColors.green,
                 fill: false,
                 data: []
             }
@@ -112,11 +126,15 @@
     // ou se souber o que está fazendo!
     function atualizarGrafico() {
 
+        
         fetch('/leituras/tempo-real', { cache: 'no-store' }).then(function (response) {
             if (response.ok) {
                 response.json().then(function (novoRegistro) {
-
+                    
                     console.log(`Dados recebidos: ${JSON.stringify(novoRegistro)}`);
+                    
+                    var temperatura_media = Math.random() * (27 - 24) + 24;
+                    b_temperatura_media.innerHTML = temperatura_media.toFixed(0);
                     
                     // tirando e colocando valores no gráfico
                     dados.labels.shift(); // apagar o primeiro
@@ -234,6 +252,7 @@
   function openNav() {
     document.getElementById("mySidebar").style.width = "250px";
     document.getElementById("main").style.marginLeft = "250px";
+    document.getElementById("canvas_grafico").style.width = "105%";
   }
 </script>
 <script type="text/javascript">
@@ -242,5 +261,6 @@
         console.log(calendar.value().format('LLL'));
     });
 
+    
     
 </script>

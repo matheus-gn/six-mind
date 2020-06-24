@@ -53,17 +53,21 @@ body {
   .graph {
     margin: 5px;
     border-radius: 5px;
-    height: 330px;
+    height: 450px;
     background-color: white;
-    width: 40%;
+    width: 64%;
     transition: 0.4s;
     float: left;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   }
   .graph:hover {
-      transform: scale(1.1,1.1);
       transition: 0.4s;
+      transform: scale(1.1,1.1);
   }
+  #canvas_grafico {
+      margin-left: 30px;
+      transition: 0.4s all;
+}
   .graph h3 {
       line-height: 40px;
       background-color: teal;
@@ -132,18 +136,7 @@ body {
     margin-top: 20px;
     color: white;
 }
-#covid19 {
-    float: left;
-    box-shadow:  0px 8px 16px 0px rgba(0,0,0,0.2); 
-    border-radius: 15px; 
-    width: 60%;
-    margin-top: 30px;
-    transition: 0.4s;
-}
-#covid19:hover {
-    transform: scale(1.1,1.1);
-    transition: 0.4s;
-}
+
 #previsao-tempo {
     width:348px; 
     height: 316px; 
@@ -152,15 +145,41 @@ body {
     transition: 0.4s;
 }
 #previsao-tempo:hover {
-    transform: scale(1.1,1.1);
+    transform: scale(0.9,0.9);
     transition: 0.4s;
 }
-#na_main{
-    margin-top: 20px;
-    margin-left: 10px;
+/* #na_main{
+    margin-top: 30px;
+    margin-left: -10px;
 }
 #na_main ul {
     margin: 0px;
     padding: 0px;
-    list-style: none outside none;
+} */
+.b {
+    height: 130px;
+    width: 30%;
+    text-align: center;
+    float: left;
+}
+.b .box-red {
+    margin-top: -80px;
+    height: 100%;
+    border-radius: 10px;
+    color: #ffffff; 
+    background-color: #cb4335;
+}
+.b h1 {
+    margin: 0;
+    padding: 12px;
+    border-radius: 5px 5px 0 0;
+    border-bottom: solid #00000024 3px;
+}
+.b .box-green {
+    margin-left: 20px;
+    background-color: #27ae60;
+    margin-top: -80px;
+    height: 100%;
+    border-radius: 10px;
+    color: #ffffff;
 }
