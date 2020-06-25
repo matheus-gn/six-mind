@@ -283,6 +283,7 @@
     font-weight: lighter;
     margin-top: 20px;
     margin-left: 50%;
+   
 }
 .pagamento .informacoes-pagamento .cinza h3 I {
     border-radius: 100%;
@@ -291,6 +292,7 @@
     font-size: 22px;
     cursor: pointer;
     transition: 0.3s all;
+    float: left;
 }
 .pagamento .informacoes-pagamento .cinza h3 I:hover {
     color: red;
