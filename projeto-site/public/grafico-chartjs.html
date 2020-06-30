@@ -14,20 +14,17 @@
     <script type="text/javascript" src="https://www.chartjs.org/dist/2.8.0/Chart.min.js"></script>
     <script type="text/javascript" src="https://www.chartjs.org/samples/latest/utils.js"></script>
     <script type="text/javascript" src="funcoes.js"></script>
-    <script  type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-    <script  type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/locale/es.js"></script>
-    <script  type="text/javascript" src="./js/calendar.js"></script>
-    <script
-      type="text/javascript"
-      src="https://cdn.intelligence.weforum.org/latest.js"
-    ></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/locale/es.js"></script>
+    <script type="text/javascript" src="./js/calendar.js"></script>
+    <script type="text/javascript" src="https://cdn.intelligence.weforum.org/latest.js"></script>
 </head>
 
-<body >
+<body>
     <div id="mySidebar" class="sidebar">
         <a href="#" class="closebtn" onclick="closeNav()">×</a>
         <div class="user">
-            <img src="./img/vicente.jfif" style="height: 60px; margin-top: 10px; border-radius: 50%;" alt="">  <br>
+            <img src="./img/vicente.jfif" style="height: 60px; margin-top: 10px; border-radius: 50%;" alt=""> <br>
             <h3 id="h3_usuario">Victor Vicente</h3>
         </div>
         <br>
@@ -38,60 +35,131 @@
         <a href="/contato"> <i class="fas fa-address-book"></i> Contato</a>
         <a href="#" id="log-out" class="fa fa-sign-out" onclick="logoff()"> Sair </a>
         <a id="timereal" href="tempo-real.html">Tempo Real</a>
-      </div>
-  
-      <div class="header">
+    </div>
+
+    <div class="header">
         <a class="openbtn" onclick="openNav()">☰</a>
         <div class="notifica">
             <i class="fa fa-user fa-2x" aria-hidden="true"></i>
-          </div>
-      </div>
-      <div id="main">
-          <div class="container">     
-                <div id="informacoes_usuario" onload="atualizarGrafico();">
-                    <br> <br>
-                    <div id="informacoes">
-                        <p>Olá, <b id="b_usuario"></b></p>
-                        <p id="how-are-you">Como você está?</p>
-                    </div>
+        </div>
+    </div>
+    <div id="main">
+        <div class="container">
+            <div id="informacoes_usuario" onload="atualizarGrafico();">
+                <br> <br>
+                <div id="informacoes">
+                    <p>Olá, <b id="b_usuario"></b></p>
+                    <p id="how-are-you">Como você está?</p>
                 </div>
-                <div class="graph g1">
-                    <h3>Gráfico Temperatura e Umidade</h3>
-                    <div style="width:92%;">
-                        <div id="div_aguarde">Dados sendo obtidos...</div>
-                        <canvas id="canvas_grafico"></canvas>
+            </div>
+            <div class="graph g1">
+                <h3>Gráfico Temperatura e Umidade</h3>
+                <div style="width:92%;">
+                    <div id="div_aguarde">Dados sendo obtidos...</div>
+                    <canvas id="canvas_grafico"></canvas>
                 </div>
-                </div>
+            </div>
+            <div>
+                <iframe
+                    src="https://www.meteoblue.com/en/weather/widget/three?geoloc=detect&nocurrent=0&noforecast=0&days=4&tempunit=CELSIUS&windunit=KILOMETER_PER_HOUR&layout=image"
+                    frameborder="0" scrolling="NO" allowtransparency="true"
+                    sandbox="allow-same-origin allow-scripts allow-popups allow-popups-to-escape-sandbox"
+                    id="previsao-tempo"></iframe>
                 <div>
-                    <iframe src="https://www.meteoblue.com/en/weather/widget/three?geoloc=detect&nocurrent=0&noforecast=0&days=4&tempunit=CELSIUS&windunit=KILOMETER_PER_HOUR&layout=image"  frameborder="0" scrolling="NO" allowtransparency="true" sandbox="allow-same-origin allow-scripts allow-popups allow-popups-to-escape-sandbox"id="previsao-tempo"></iframe><div><!-- DO NOT REMOVE THIS LINK --><a href="https://www.meteoblue.com/en/weather/week/index?utm_source=weather_widget&utm_medium=linkus&utm_content=three&utm_campaign=Weather%2BWidget" target="_blank"></a></div>
+                    <!-- DO NOT REMOVE THIS LINK --><a
+                        href="https://www.meteoblue.com/en/weather/week/index?utm_source=weather_widget&utm_medium=linkus&utm_content=three&utm_campaign=Weather%2BWidget"
+                        target="_blank"></a></div>
+            </div>
+            <div>
+                <div class="root">
+                    <div class="calendar" id="calendar"></div>
                 </div>
-                    <div>
-                    <div class="root">
-                        <div class="calendar" id="calendar"></div>
-                    </div>
-                    </div>
+            </div>
             <!-- Widgets Notícias Agrícolas - www.noticiasagricolas.com.br/widgets -->
-            <div class="b">
+            <!-- <div class="b">
                 <div class="box-red">
                     <h1><b id="b_temperatura_alerta">30</b>°C</h1>
                     <br>
                     <h2 id="h2_alerta">Alerta</h2>
                 </div>
-            </div>
+            </div> -->
             <div class="b">
                 <div class="box-green">
                     <h1><b id="b_temperatura_media">25</b>°C</h1>
                     <br>
-                    <h2 id="h2_media">Média</h2>
+                    <h2 id="h2_media">Média Temperatura</h2>
+                </div>
+            </div>
+
+            <div class="b">
+                <div class="box-blue">
+                    <h1><b id="b_umidade_media">50</b>%</h1>
+                    <br>
+                    <h2 id="h2_media">Média Umidade</h2>
                 </div>
             </div>
             <!-- <script type="text/javascript" src="https://www.noticiasagricolas.com.br/widget/noticias.js.php?subsecao=15,155,154,120&largura=300px&altura=250px&fonte=Arial%2C%20Helvetica%2C%20sans-serif&tamanho=12pt&cortexto=333333&corlink=006666&qtd=15&output=js" style="margin-top: 50px;"></script>
         </div> -->
-    </div>
+        </div>
+
+        <!-- <button id="modal-btn" class="button">Click Here</button> -->
+
+        <div id="my-modal" class="modal">
+            <div class="modal-content" id="modcontent">
+                <div class="modal-header">
+                    <span class="close">&times;</span>
+                    <h2 id="um2">Alerta de temperatura</h2>
+                </div>
+                <div class="modal-body">
+                    <p>Temperatura Critica <b id="btemp">0</b> </p>
+                    <p id="p1">O sensor detectou que a temperatura atingiu um valor alto, cuidado</p>
+
+                </div>
+                <div class="modal-footer">
+                    <!-- <h3>Modal Footer</h3> -->
+                </div>
+            </div>
+
+            <div class="modal-content2" id="modcontent2">
+                <div class="modal-header2">
+                    <span class="close2">&times;</span>
+                    <h2>Alerta de umidade</h2>
+                </div>
+                <div class="modal-body2">
+                    <p>Umidade Critica <b id="bumi">0</b> </p>
+                    <p id="p2">O sensor detectou que a umidade atingiu um valor alto, cuidado</p>
+
+                </div>
+                <div class="modal-footer2">
+                    <!-- <h3>Modal Footer</h3> -->
+                </div>
+            </div>
+            
+        </div>
+
+        <!-- <div id="my-modal2" class="modal2">
+            <div class="modal-content2">
+                <div class="modal-header2">
+                    <span class="close2">&times;</span>
+                    <h2>Alerta de umidade</h2>
+                </div>
+                <div class="modal-body2">
+                    <p>Umidade Critica <b id="bumi">0</b> </p>
+                    <p id="p2">O sensor detectou que a umidade atingiu um valor alto, cuidado</p>
+
+                </div>
+                <div class="modal-footer2">
+                    
+                </div>
+            </div>
+        </div> -->
+
 </body>
 
 </html>
 <script>
+
+
 
     window.onload = obterDadosGrafico;
 
@@ -126,16 +194,56 @@
     // ou se souber o que está fazendo!
     function atualizarGrafico() {
 
-        
+
+
+
         fetch('/leituras/tempo-real', { cache: 'no-store' }).then(function (response) {
             if (response.ok) {
                 response.json().then(function (novoRegistro) {
-                    
+
                     console.log(`Dados recebidos: ${JSON.stringify(novoRegistro)}`);
-                    
-                    var temperatura_media = Math.random() * (27 - 24) + 24;
+
+                    var temperatura_media = Math.random() * (10) + 20;
+                    var umidade_media = Math.random() * (40) + 45;
                     b_temperatura_media.innerHTML = temperatura_media.toFixed(0);
-                    
+
+
+                    b_umidade_media.innerHTML = umidade_media.toFixed(0);
+
+                    if (temperatura_media > 26) {
+                        um2.innerHTML = "Alerta de Temperatura"
+                        btemp.innerHTML = `${temperatura_media.toFixed(2)}ºC`
+                        p1.innerHTML = 'O sensor detectou que a temperatura atingiu um valor alto, cuidado'
+
+                        openModal();
+                    }
+
+                    else if (temperatura_media < 23) {
+                        um2.innerHTML = "Alerta de Temperatura"
+                        btemp.innerHTML = `${temperatura_media.toFixed(2)}ºC`
+                        p1.innerHTML = 'O sensor detectou que a temperatura atingiu um valor baixo, cuidado'
+
+                        openModal();
+                    }
+
+
+                    if (umidade_media > 80) {
+                       
+                        bumi.innerHTML = `${umidade_media.toFixed(2)}%`
+                        p2.innerHTML = 'O sensor detectou que a umidade atingiu um valor alto, cuidado'
+                        openModal2();
+                    }
+
+                    else if (umidade_media < 53) {
+                        
+                        bumi.innerHTML = `${umidade_media.toFixed(2)}%`
+                        p2.innerHTML = 'O sensor detectou que a umidade atingiu um valor baixo, cuidado'
+                        openModal2();
+                    }
+
+
+
+
                     // tirando e colocando valores no gráfico
                     dados.labels.shift(); // apagar o primeiro
                     dados.labels.push(novoRegistro.momento_grafico); // incluir um novo momento
@@ -144,7 +252,7 @@
                     dados.datasets[0].data.push(novoRegistro.temperatura); // incluir uma nova leitura de temperatura
                     dados.datasets[1].data.push(novoRegistro.umidade); // incluir uma nova leitura de umidade
                     window.grafico_linha.update();
-                    
+
                     setTimeout(atualizarGrafico, 5000);
                 });
             } else {
@@ -152,10 +260,10 @@
                 setTimeout(atualizarGrafico, 5000);
             }
         })
-        .catch(function (error) {
-            console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
-        });
-        
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            });
+
     }
 
     // altere aqui as configurações do gráfico
@@ -163,7 +271,7 @@
     function configurarGrafico() {
         var configuracoes = {
             responsive: true,
-            animation: {duration: 500},
+            animation: { duration: 500 },
             hoverMode: 'index',
             stacked: false,
             title: {
@@ -207,7 +315,7 @@
 
                     for (i = 0; i < resposta.length; i++) {
                         var registro = resposta[i];
-                    
+
                         // aqui, após 'registro.' use os nomes 
                         // dos atributos que vem no JSON 
                         // que gerou na consulta ao banco de dados
@@ -227,9 +335,9 @@
                 console.error('Nenhum dado encontrado ou erro na API');
             }
         })
-        .catch(function (error) {
-            console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
-        });
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            });
 
     }
 
@@ -246,14 +354,14 @@
         setTimeout(atualizarGrafico, 5000);
     }
     function closeNav() {
-    document.getElementById("mySidebar").style.width = "0";
-    document.getElementById("main").style.marginLeft = "0";
-  }
-  function openNav() {
-    document.getElementById("mySidebar").style.width = "250px";
-    document.getElementById("main").style.marginLeft = "250px";
-    document.getElementById("canvas_grafico").style.width = "105%";
-  }
+        document.getElementById("mySidebar").style.width = "0";
+        document.getElementById("main").style.marginLeft = "0";
+    }
+    function openNav() {
+        document.getElementById("mySidebar").style.width = "250px";
+        document.getElementById("main").style.marginLeft = "250px";
+        document.getElementById("canvas_grafico").style.width = "105%";
+    }
 </script>
 <script type="text/javascript">
     let calendar = new Calendar('calendar');
@@ -261,6 +369,65 @@
         console.log(calendar.value().format('LLL'));
     });
 
-    
-    
+
+
+</script>
+
+<script>
+
+
+    const modal = document.querySelector('#my-modal');
+    const closeBtn = document.querySelector('.close');
+
+    const modal2 = document.querySelector('#my-modal2');
+    const closeBtn2 = document.querySelector('.close2');
+
+
+
+    closeBtn.addEventListener('click', closeModal);
+    window.addEventListener('click', outsideClick);
+
+    closeBtn2.addEventListener('click', closeModal2);
+    window2.addEventListener('click', outsideClick2);
+
+    // Open
+    function openModal() {
+        modal.style.display = 'block';
+        modcontent.style.display='block';
+       
+        
+    }
+
+    function openModal2() {
+        modal.style.display = 'block';
+        modcontent2.style.display='block';
+        
+    }
+
+
+    // Close
+    function closeModal() {
+        modal.style.display = 'none';
+    }
+
+    function closeModal2() {
+        modal.style.display = 'none';
+        
+
+
+    }
+
+    // Close If Outside Click
+    function outsideClick(e) {
+        if (e.target == modal) {
+            modal.style.display = 'none';
+        }
+    }
+
+    function outsideClick2(e2) {
+        if (e2.target == modal2) {
+            modal2.style.display = 'none';
+        }
+    }
+
 </script>
