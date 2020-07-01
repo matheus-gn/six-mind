@@ -304,9 +304,10 @@ nav a
 
 .link:hover
 {
-    background-color: white;
-    color: #80ff00;
+    background-color: #80ff00;
+    color: black;
     overflow: hidden;
+    text-decoration: none;
 }
 
 #check:checked~.barra
