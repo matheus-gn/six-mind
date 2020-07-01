@@ -551,12 +551,12 @@
 .v-container{
     padding-left: 10px;
 }
-.v-container img {
+.v-container #v-voltar {
     transition: 0.3s;
 }
-.v-container img:hover{
+.v-container #v-voltar:hover{
     transition: 0.3s;
-    transform: scale(1.2);
+    transform: scale(1.1,1.1);
 }
 .v-main{
     width: 100%;
@@ -716,7 +716,7 @@
     position: fixed;
     transition: all .2s linear;
     left: -300px;
-    opacity: 0.3;
+    /* opacity: 0.3; */
     z-index: 0;
     overflow: hidden;
 }
@@ -729,7 +729,7 @@
     position: fixed;
     transition: all .2s linear;
     right: -300px;
-    opacity: 0.3;
+    /* opacity: 0.3; */
     z-index: 0;
     overflow: hidden;
    
@@ -825,7 +825,7 @@ nav a
 {
     background: url('../img/soja.jpg') no-repeat;
     width: 100%;
-    background-size: 270%;
+    background-size: 130%;
     height: 960px;
     z-index: 1;
 }
