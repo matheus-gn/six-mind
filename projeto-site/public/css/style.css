@@ -29,6 +29,7 @@
     padding-right: 5%;
     padding-left: 5%;
     justify-content: space-evenly;
+    margin-top: 15%;
 }
 .caixa h2 {
     margin-top: 30px;
@@ -60,6 +61,7 @@
     padding-left: 5%;
     justify-items: flex-start;
     justify-content: space-evenly;
+    
 }
 .botoes input{
     color: rgb(255, 255, 255);
@@ -278,7 +280,7 @@
     color: #686868;
     font-weight: lighter;
     margin-top: 20px;
-    margin-left: 50%;
+    margin-left: 8%;
    
 }
 .pagamento .informacoes-pagamento .cinza h3 I {
@@ -288,7 +290,8 @@
     font-size: 22px;
     cursor: pointer;
     transition: 0.3s all;
-    float: left;
+    /* float: left; */
+    
 }
 .pagamento .informacoes-pagamento .cinza h3 I:hover {
     color: red;
@@ -302,7 +305,9 @@
 }
 .pagamento .informacoes-pagamento .branco label {
     font-weight: lighter;
-    color: #686868
+    color: #686868;
+    margin-left: 100px;
+    
 }
 
 .pagamento .informacoes-pagamento .branco #text-car-number {
@@ -375,12 +380,16 @@
 .pagamento .informacoes-pagamento .cinza #h3_escolha {
     font-size: 28px;
 }
+
+.pagamento .informacoes-pagamento .cinza #h3_topo {
+    margin-left: 50%;
+}
 .pagamento .informacoes-pagamento .cinza #b_preco {
     color: #564DDA;
     font-size: 30px;
     float: right;
     margin-top: -35px;
-    margin-right: 10px;
+    margin-right: 50px;
     font-family: sans-serif;
 }
 /* .pagamento .informacoes-pagamento .cinza i {
@@ -389,18 +398,19 @@
     color: #585858;
 } */
 .pagamento .informacoes-pagamento .cinza p {
-    margin-left: -20%;
+   
     font-size: 22px;
     color: #585858;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-left: 8%;
 }
 .pagamento .informacoes-pagamento .cinza #plano-desc {
     font-size: 12px;
-    margin-left: -20%;
+    margin-left: 13%;
 }
 .pagamento .informacoes-pagamento .cinza #h3_total {
     font-size: 28px;
-    margin-left: 0px;
+    margin-left: 8%;
 }
 .pagamento .informacoes-pagamento .cinza #h3_total::before {
     content: '';
@@ -412,7 +422,7 @@
 }
 .pagamento .informacoes-pagamento .cinza #btn-payment {
     width: 250px;
-    margin-left: 90px;
+    margin-left: 27%;
     padding: 12px 0px;
     background-color: #564DDA;
     border: none;
