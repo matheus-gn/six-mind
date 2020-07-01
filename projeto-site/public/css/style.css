@@ -556,7 +556,7 @@
 }
 .v-container #v-voltar:hover{
     transition: 0.3s;
-    transform: scale(1.1,1.1);
+    transform: scale(1.3,1.3);
 }
 .v-main{
     width: 100%;
@@ -1125,25 +1125,17 @@ nav a
 }
 
 
-#ag
-{
+#ag {    
     width: 100px;
     height: 100px;
-
     margin-top: 20%;
-
     margin-left: 45%;
     cursor: pointer;
+    transition: 0.5s all;
 }
-
-#ag:hover
-{
-    width: 200px;
-    height: 200px;
-
-    margin-left: 40%;
-    margin-top: 10%;
-
+#ag:hover{
+    transform: scale(1.3,1.3);
+    transition: 0.5s all;
 }
 
 
