@@ -90,10 +90,10 @@
                         <label for="text-cvc">CVC</label> <br>
                         <input type="text" id="text-cvc" placeholder="123">
                         <label id="label-text-cvc" for="text-plan">Plano</label>
-                        <select name="" id="text-plan">
-                            <option value="">Standard</option>
-                            <option value="">Padrao</option>
-                            <option value="">Premium</option>
+                        <select name="" id="text_plan" onchange="Plano()">
+                            <option value="1">Standard</option>
+                            <option value="2">Padrao</option>
+                            <option value="3">Premium</option>
                         </select>
                     </form>
                 </div>
@@ -101,12 +101,12 @@
                     <h3 id="h3_topo">Cancelar Pagamento <a style="color: #686868;" href="contratos.html"><i class="fa fa-times" aria-hidden="true"></i></a></h3> <br> <br>
                     <h2>Resumo do Pedido</h2> <br>
                     <h3 id="h3_escolha">Standard</h3>
-                    <b id="b_preco">R$ 150,00</b>
-                    <p id="plano-desc">Até 30 sensores</p>
-                    <p id="plano-desc">Até 3 safras</p>
-                    <p id="plano-desc">Suporte básico de software</p> <br>
+                    <b id="b_preco_plan">R$ 150,00</b>
+                    <p id="plano_desc_dc1">Até 30 sensores</p>
+                    <p id="plano_desc_dc2">Até 3 safras</p>
+                    <p id="plano_desc_dc3">Suporte básico de software</p> <br>
                     <p>Custo de instalação:</p><b id="b_preco">R$ 450,00</b> <br> <br>
-                    <h3 id="h3_total">Total</h3> <b id="b_preco">R$ 600,00</b> <br> <br>
+                    <h3 id="h3_total">Total</h3> <b id="b_preco_total">R$ 600,00</b> <br> <br>
                     <button id="btn-payment">Fazer Pagamento</button>
                 </div>
             </div>
@@ -114,3 +114,45 @@
     </div>
 </body>
 </html>
+
+<script>
+
+    function Plano()
+    {
+
+        if(text_plan.value==1)
+        {
+            h3_escolha.innerHTML="Standard";
+            b_preco_plan.innerHTML="R$ 150,00";
+            plano_desc_dc1.innerHTML="até 30 Sensores"  ;
+            plano_desc_dc2.innerHTML="até 3 safras"  ;
+            plano_desc_dc3.innerHTML="Suporte básico de software"  ;
+            b_preco_total.innerHTML="R$ 600,00";
+
+        }
+
+        else  if(text_plan.value==2)
+        {
+            h3_escolha.innerHTML="Padrão";
+            b_preco_plan.innerHTML="R$ 270,00";
+            plano_desc_dc1.innerHTML="até 60 Sensores"  ;
+            plano_desc_dc2.innerHTML="até 9 safras"  ;
+            plano_desc_dc3.innerHTML="Suporte padão de software"  ;
+            b_preco_total.innerHTML="R$ 720,00";
+
+        }
+
+        else  if(text_plan.value==3)
+        {
+            h3_escolha.innerHTML="Premium";
+            b_preco_plan.innerHTML="R$ 380,00";
+            plano_desc_dc1.innerHTML="até 90 Sensores"  ;
+            plano_desc_dc2.innerHTML="safras Ilimitadas"  ;
+            plano_desc_dc3.innerHTML="Suporte Premium de software"  ;
+            b_preco_total.innerHTML="R$ 830,00";
+
+        }
+
+    }
+
+</script>

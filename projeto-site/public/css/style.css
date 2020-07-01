@@ -358,7 +358,7 @@
     margin-left: 80px;
     margin-top: -40px;
 }
-.pagamento .informacoes-pagamento .branco #text-plan {
+.pagamento .informacoes-pagamento .branco #text_plan {
     padding:6px 0px;
     width: 100px;
     border-radius: 5px;
@@ -384,7 +384,7 @@
 .pagamento .informacoes-pagamento .cinza #h3_topo {
     margin-left: 50%;
 }
-.pagamento .informacoes-pagamento .cinza #b_preco {
+.pagamento .informacoes-pagamento .cinza #b_preco, #b_preco_total, #b_preco_plan {
     color: #564DDA;
     font-size: 30px;
     float: right;
@@ -392,6 +392,15 @@
     margin-right: 50px;
     font-family: sans-serif;
 }
+
+/* .pagamento .informacoes-pagamento .cinza #b_preco_total {
+    color: #564DDA;
+    font-size: 30px;
+    float: right;
+    margin-top: -35px;
+    margin-right: 50px;
+    font-family: sans-serif;
+} */
 /* .pagamento .informacoes-pagamento .cinza i {
     margin-left: 40px;
     font-size: 18px;
@@ -404,7 +413,7 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     margin-left: 8%;
 }
-.pagamento .informacoes-pagamento .cinza #plano-desc {
+.pagamento .informacoes-pagamento .cinza #plano_desc , #plano_desc_dc1 ,#plano_desc_dc2, #plano_desc_dc3 {
     font-size: 12px;
     margin-left: 13%;
 }
