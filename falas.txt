@@ -1,0 +1,21 @@
+	Como foi dito, os danos causados no mato grosso do sul foram, em sua grande meioridade, fatores 
+externos principalmente em temperatura. Partindo desse ponto, nós percebemos, então, uma oportunidade de 
+ajuda-los através da tecnologia, levando até eles um controle maior sobre sua produção.
+	Nossa solução entra como um monitoramento remoto, como podemos ver no HLD, o sensor, situado no 
+meio da plantação capta os dados e manda para a nuvem através de sinal wifi, para que assim, em sequencia
+o usuario possa, também através d wifi, ver as analises e leituras do sensor, assim ele pode ver, tanto o
+historico para um estudo mais aprofundado ou a leitura em tempo real, para checar anormalidades em sua pla
+ntação, como por exemplo um incendio, onde o ar fica muito seco e a temperatura elevada, e posivelmente
+um sensor quebrado, todos esses dados serão notificados ao usuario.
+
+
+	Olhando agora na parte de aquisição do nosso produto, como funcionaria para o cliente?
+	Para isso usaremos um diagrama com 5 passos para explicar, primeiro de tudo é de suma importancia
+que haja um planejamento estrategico da instalações dos sensores, pois com mais sensores, maior será a 
+precisão do monitoramento, então é desejavel para plantas mais sensiveis ás mudanças, que haja mais senso
+res instalados; O 2° passo é registrar os sensores aos tipos de planta, pois cada planta possui parametros
+diferentes, com isso, será possivel um alinhamento entre a planta e as medidas do sensor; Logo após isso,
+temos a analise do dados fornecidos pelo sensor, comparando-os com os parametros ideais já registrados no
+passo anterior; Com essa analise, o cliente se sente mais confortavel em tomar medidas, já que ele possui
+conhecimento do que ocorre na sua plantação; E por ultimo a colheita, que seria o resultado que nossa solu
+ção traria, visando a diminuição de perdas e aumento na produção e lucro.	 
