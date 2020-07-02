@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <title>CADASTRO</title>
+    <link rel="shortcut icon" href="./img/export.png" type="image/png" />
 </head>
 <body class="bdv">
 
@@ -21,33 +22,106 @@
         </div>
         <div class="v-box" style="height: 530px;">
             <form>
-                <label for="nome_sobrenome">NOME E SOBRENOME:</label>
-                <input type="text" id="nome_sobrenome">
+                <label for="nomesobrenome">NOME E SOBRENOME:</label>
+                <input  required type="text" id="nomesobrenome">
                 
                 <label for="">PERFIL:</label>
-                <select id="perfil">
+                <select required id="perfil">
                     <option value="">ESCOLHER PERFIL</option>
                     <option value="">EMPRESÁRIO</option>
                     <option value="">AGRICULTOR</option>
                     <option value="">COORDENADOR</option>
                 </select>
                 <label for="tempo_cargo">TEMPO NO CARGO(ANOS):</label>
-                <input type="number" id="tempo_cargo">
+                <input  required type="number" id="tempo_cargo" min="0">
                 <label for="">GRÃO ESCOLHIDO:</label>
-                <select name="" id="">
+                <select required name="" id="">
                     <option value="">ESCOLHER GRÃO</option>
                     <option value="">SOJA</option>
                 </select>
                 <label for="email_cad">EMAIL:</label>
-                <input type="email" id="email_cad">
+                <input  required type="email" id="email_cad">
                 <label for="senha01">SENHA:</label>
-                <input type="password" id="senha01">
+                <input required type="password" id="senha01">
                 <label for="senha02">CONFIRME SUA SENHA:</label>
-                <Input type="password" id="senha02">
+                <Input required type="password" id="senha02">
                 <span style="margin: auto;padding-top: 10px;padding-bottom: 10px;">JÁ TENHO CONTA? <a href="login.html">ENTRE AQUI!</a></span>
-                <input type="submit" id="botao" value="CADASTRAR-SE">
+                
+                <button onclick="Cadastro()" id="botao">CADASTRAR-SE</button>
+                <div id="containerpopup">
+                  <div id="mensagemErro"></div><br>
+                  <div id="mensagemAcerto"></div> <br>
+                  <button id="botao" onclick="btnok()">OK</button>
+                </div>
             </form>
         </div>
     </div>
 </body>
 </html>
+<script>
+        function btnok () {
+          containerpopup.style.display = 'none';
+        }
+       function Cadastro() {
+        containerpopup.style.display = 'block';
+        var erros = validaContato();
+        mensagemErro.innerHTML = "";
+        mensagemAcerto.innerHTML = "";
+
+        if (erros.length > 0) {
+          for (var i = 0; i < erros.length; i++) {
+            var erro = erros[i];
+            var li = document.createElement("li");
+            li.innerHTML = erro;
+            mensagemErro.appendChild(li);
+          }
+        } else {
+          var p = document.createElement("p");
+          p.innerHTML = "Sua mensagem foi enviada!";
+          mensagemAcerto.appendChild(p);
+        }
+
+        // Aqui vai ter um código que envia as
+        // informações preenchidas para o BD
+        return;
+      }
+
+      function validaContato() {
+        var erros = [];
+        console.log(email_cad.value.indexOf("@") == -1);
+
+        if (!nomesobrenome.value) {
+          erros.push("O nome não foi preenchido");
+        }
+
+        if (
+          nomesobrenome.value.search(" ") == -1 ||
+          nomesobrenome.value[nomesobrenome.value.length - 1] == " " ||
+          nomesobrenome.value[0] == " "
+        ) {
+          erros.push("Insira o sobrenome");
+        }
+
+        if (email_cad.value.indexOf("@") == -1) {
+          erros.push("O formato de email é: usuario@dominio.com");
+        } else {
+          var parts = email_cad.value.split("@");
+          var domain = parts[1];
+
+          if (domain.indexOf(".") == -1) {
+            erros.push("O formato de email é: usuario@dominio.com");
+          } else {
+            var domainParts = domain.split(".");
+            var ext = domainParts[1];
+
+            if (ext.length > 4 || ext.length < 2) {
+              erros.push("O formato de email é: usuario@dominio.com");
+            }
+          }
+        }
+
+        return erros;
+
+        
+      }
+</script>

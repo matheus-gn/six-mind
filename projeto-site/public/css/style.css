@@ -1143,3 +1143,35 @@ nav a
 {
     transition:  all .4s;
 }
+#containerpopup {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 400px;
+    height: 200px;
+    padding: 15px;
+    border: solid 1px #564DDA;
+    border-radius: 20px;
+    display: none;
+    background-color: white;
+}
+#containerpopup #botao {
+    margin-left: 24%; 
+}
+#containerpopup #mensagemErro {
+    list-style: none;
+    background-color: #ff00004f;
+    margin: 5px;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+#containerpopup #mensagemAcerto p{
+    background-color: #1d9650;
+    padding: 10px;
+    border-radius: 5px;
+    color: white;
+  }
