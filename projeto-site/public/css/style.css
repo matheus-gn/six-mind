@@ -15,6 +15,7 @@
     padding-bottom: 2%;
     color: white;
     font-size: 60px;
+    font-weight: lighter;
 }
 .imagem .subtitulo p{
     padding-top:2%;
@@ -845,7 +846,7 @@ nav a
 
 .textlogo h1
 {
-    color: #753a00;
+    color: white;
     font-size: 40px;
     margin-left: 10%;
     margin-top: -10%;
@@ -856,7 +857,7 @@ nav a
 
 .textlogo p
 {
-    color: #753a00;
+    color: white;
     font-size: 30px;
     margin-left: 10%;
     margin-top: 5%; 
