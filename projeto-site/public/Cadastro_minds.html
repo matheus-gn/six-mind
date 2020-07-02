@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <title>CADASTRO</title>
+    <link rel="shortcut icon" href="./img/export.png" type="image/png" />
 </head>
 <body class="bdv">
 
@@ -25,16 +26,16 @@
                 <input  required type="text" id="nomesobrenome">
                 
                 <label for="">PERFIL:</label>
-                <select id="perfil">
+                <select required id="perfil">
                     <option value="">ESCOLHER PERFIL</option>
                     <option value="">EMPRESÁRIO</option>
                     <option value="">AGRICULTOR</option>
                     <option value="">COORDENADOR</option>
                 </select>
                 <label for="tempo_cargo">TEMPO NO CARGO(ANOS):</label>
-                <input  required type="number" id="tempo_cargo">
+                <input  required type="number" id="tempo_cargo" min="0">
                 <label for="">GRÃO ESCOLHIDO:</label>
-                <select name="" id="">
+                <select required name="" id="">
                     <option value="">ESCOLHER GRÃO</option>
                     <option value="">SOJA</option>
                 </select>
@@ -47,15 +48,22 @@
                 <span style="margin: auto;padding-top: 10px;padding-bottom: 10px;">JÁ TENHO CONTA? <a href="login.html">ENTRE AQUI!</a></span>
                 
                 <button onclick="Cadastro()" id="botao">CADASTRAR-SE</button>
-                <div id="mensagemErro"></div><br>
-                <div id="mensagemAcerto"></div>
+                <div id="containerpopup">
+                  <div id="mensagemErro"></div><br>
+                  <div id="mensagemAcerto"></div> <br>
+                  <button id="botao" onclick="btnok()">OK</button>
+                </div>
             </form>
         </div>
     </div>
 </body>
 </html>
 <script>
+        function btnok () {
+          containerpopup.style.display = 'none';
+        }
        function Cadastro() {
+        containerpopup.style.display = 'block';
         var erros = validaContato();
         mensagemErro.innerHTML = "";
         mensagemAcerto.innerHTML = "";
@@ -94,7 +102,6 @@
           erros.push("Insira o sobrenome");
         }
 
-        
         if (email_cad.value.indexOf("@") == -1) {
           erros.push("O formato de email é: usuario@dominio.com");
         } else {
