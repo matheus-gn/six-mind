@@ -203,14 +203,14 @@
 
                     console.log(`Dados recebidos: ${JSON.stringify(novoRegistro)}`);
 
-                    var temperatura_media = Math.random() * (10) + 20;
-                    var umidade_media = Math.random() * (40) + 45;
+                    var temperatura_media = Math.random() * (9) + 21;
+                    var umidade_media = Math.random() * (5) + 65;
                     b_temperatura_media.innerHTML = temperatura_media.toFixed(0);
 
 
                     b_umidade_media.innerHTML = umidade_media.toFixed(0);
 
-                    if (temperatura_media > 26) {
+                    if (temperatura_media >= 28) {
                         um2.innerHTML = "Alerta de Temperatura"
                         btemp.innerHTML = `${temperatura_media.toFixed(2)}ºC`
                         p1.innerHTML = 'O sensor detectou que a temperatura atingiu um valor alto, cuidado'
@@ -218,7 +218,7 @@
                         openModal();
                     }
 
-                    else if (temperatura_media < 23) {
+                    else if (temperatura_media <= 22) {
                         um2.innerHTML = "Alerta de Temperatura"
                         btemp.innerHTML = `${temperatura_media.toFixed(2)}ºC`
                         p1.innerHTML = 'O sensor detectou que a temperatura atingiu um valor baixo, cuidado'
@@ -227,14 +227,14 @@
                     }
 
 
-                    if (umidade_media > 80) {
+                    if (umidade_media > 69.25) {
                        
                         bumi.innerHTML = `${umidade_media.toFixed(2)}%`
                         p2.innerHTML = 'O sensor detectou que a umidade atingiu um valor alto, cuidado'
                         openModal2();
                     }
 
-                    else if (umidade_media < 53) {
+                    else if (umidade_media < 65.75) {
                         
                         bumi.innerHTML = `${umidade_media.toFixed(2)}%`
                         p2.innerHTML = 'O sensor detectou que a umidade atingiu um valor baixo, cuidado'
