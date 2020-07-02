@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./img/credit-card.png" type="image/png" />
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://kit.fontawesome.com/8034edf1bb.js" crossorigin="anonymous"></script>
+    <title>Pagamento</title>
+</head>
+<body class="bdz" >
+    <!-- <input type="checkbox" id="check">
+    <label id="icone" for="check"> <img src="img/open-menu (1).png" alt="" style="width: 50px; height: 45px;"></label>
+    <div class="barra">
+
+
+        <nav>
+            <a href="index.html">
+                <div class="link">Início</div>
+            </a>
+            <a href="Contratos.html">
+                <div class="link">Contrato</div>
+            </a>
+            <a href="painel.html">
+                <div class="link">Painel</div>
+            </a>
+            <a href="contatos.html">
+                <div class="link">Equipe</div>
+            </a>
+            <a href="payment.html">
+                <div class="link">Pagamento</div>
+            </a>
+
+        </nav>
+
+    </div>
+
+
+
+    <input type="checkbox" id="check2">
+    <label id="icone2" for="check2"> <img src="img/person.png" alt="" style="width: 50px; height: 45px;"></label>
+
+    <div class="barra2">
+
+
+        <nav>
+            <a href="login.html">
+                <div class="link">Login</div>
+            </a>
+            <a href="Cadastro_minds.html">
+                <div class="link">Registrar-se</div>
+            </a>
+
+
+
+        </nav>
+
+
+
+    </div> -->
+    <div class="pagamento">
+        <div class="content">
+            <div class="branca"></div>
+            
+            <div class="roxo"></div>
+            <div class="informacoes-pagamento">
+                <div class="branco">
+                    <h3>Detalhes do Pagamento</h3>
+                    <img src="img/CARTAO.png" alt="Imagem de Cartão para pagamento" style="height: 230px;"> <br> <br>
+                    <form action="">
+                        <label for="text-car-number">  Numero do cartão de crédito</label class="ncdc"> <br>
+                        <input type="text" id="text-car-number" placeholder="1234 5678 9876 5432">
+                        <br> <br>
+                        <label for="text-expiration">Expirar</label> <br>
+                        <select name="" id="text-expiration">
+                            <option value="">Janeiro</option>
+                            <option value="">Fevereiro</option>
+                            <option value="">Março</option>
+                            <option value="">Abril</option>
+                            <option value="">Maio</option>
+                            <option value="">Junho</option>
+                            <option value="">Julho</option>
+                            <option value="">Agosto</option>
+                            <option value="">Setembro</option>
+                            <option value="">Outubro</option>
+                            <option value="">Novembro</option>
+                            <option value="">Dezembro</option>
+                        </select>
+                        <input placeholder="2018" id="text-date"> <br><br>
+                        <label for="text-cvc">CVC</label> <br>
+                        <input type="text" id="text-cvc" placeholder="123">
+                        <label id="label-text-cvc" for="text-plan">Plano</label>
+                        <select name="" id="text_plan" onchange="Plano()">
+                            <option value="1">Standard</option>
+                            <option value="2">Padrao</option>
+                            <option value="3">Premium</option>
+                        </select>
+                    </form>
+                </div>
+                <div class="cinza">
+                    <h3 id="h3_topo">Cancelar Pagamento <a style="color: #686868;" href="contratos.html"><i class="fa fa-times" aria-hidden="true"></i></a></h3> <br> <br>
+                    <h2>Resumo do Pedido</h2> <br>
+                    <h3 id="h3_escolha">Standard</h3>
+                    <b id="b_preco_plan">R$ 150,00</b>
+                    <p id="plano_desc_dc1">Até 30 sensores</p>
+                    <p id="plano_desc_dc2">Até 3 safras</p>
+                    <p id="plano_desc_dc3">Suporte básico de software</p> <br>
+                    <p>Custo de instalação:</p><b id="b_preco">R$ 450,00</b> <br> <br>
+                    <h3 id="h3_total">Total</h3> <b id="b_preco_total">R$ 600,00</b> <br> <br>
+                    <button id="btn-payment">Fazer Pagamento</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+<script>
+
+    function Plano()
+    {
+
+        if(text_plan.value==1)
+        {
+            h3_escolha.innerHTML="Standard";
+            b_preco_plan.innerHTML="R$ 150,00";
+            plano_desc_dc1.innerHTML="até 30 Sensores"  ;
+            plano_desc_dc2.innerHTML="até 3 safras"  ;
+            plano_desc_dc3.innerHTML="Suporte básico de software"  ;
+            b_preco_total.innerHTML="R$ 600,00";
+
+        }
+
+        else  if(text_plan.value==2)
+        {
+            h3_escolha.innerHTML="Padrão";
+            b_preco_plan.innerHTML="R$ 270,00";
+            plano_desc_dc1.innerHTML="até 60 Sensores"  ;
+            plano_desc_dc2.innerHTML="até 9 safras"  ;
+            plano_desc_dc3.innerHTML="Suporte padão de software"  ;
+            b_preco_total.innerHTML="R$ 720,00";
+
+        }
+
+        else  if(text_plan.value==3)
+        {
+            h3_escolha.innerHTML="Premium";
+            b_preco_plan.innerHTML="R$ 380,00";
+            plano_desc_dc1.innerHTML="até 90 Sensores"  ;
+            plano_desc_dc2.innerHTML="safras Ilimitadas"  ;
+            plano_desc_dc3.innerHTML="Suporte Premium de software"  ;
+            b_preco_total.innerHTML="R$ 830,00";
+
+        }
+
+    }
+
+</script>

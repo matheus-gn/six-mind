@@ -11,7 +11,7 @@
 }
 
 .root {
-    min-height: 250px;
+    height: 250px;
     padding: 0 15px;
     float: left;
     margin-top: 5px;
@@ -26,8 +26,8 @@
     padding: 20px 10px;
     background: linear-gradient(90deg, rgba(255,145,0,1) 0%, rgba(255,231,0,1) 100%);
     border-radius: 3px;
-    width: 100%;
-    max-width: 300px;
+    width: 330px;
+    max-width: 400px;
     font-family: Arial, Helvetica, sans-serif;
 }
 
